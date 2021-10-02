@@ -1,0 +1,36 @@
+<div class="l-container">
+  <ul>
+    <li class="list">
+      <!-- Profile Section -->
+      <div class="list__profile">
+        <div><img src="https://tinyurl.com/hbr9l7v" /></div>
+        <div class="list__label">
+          <div class="list__label--value">
+            &nbsp;&nbsp;{{ User.firstName }} {{ User.lastName }}
+          </div>
+          <div class="list__label--header">
+            &nbsp;&nbsp; <i class="bi bi-telephone-fill"></i>
+            {{ User.phoneNumber }}
+          </div>
+
+          <div class="list__photos">
+            <button
+              class="btn btn-danger"
+              style="margin-right: 10px; margin-left: 10px"
+              (click)="onDelete(User.phoneNumber)"
+            >
+              Delete
+            </button>
+            <button
+              class="btn btn-primary"
+              style="margin-right: 10px; margin-left: 10px"
+              (click)="onUpdate(User.phoneNumber)"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

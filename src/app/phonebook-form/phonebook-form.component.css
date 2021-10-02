@@ -1,0 +1,10 @@
+.error {
+  border: 1px solid red;
+}
+.bg {
+  background-image: url("https://res.cloudinary.com/hmvbhgfqs/image/upload/v1633159044/LTI_Mini_Project/imageonline-co-darkenimage_gzcjoa.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

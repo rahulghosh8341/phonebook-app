@@ -1,0 +1,18 @@
+header {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 50px;
+  font-size: 30px;
+  font-family: Oxygen;
+}
+
+.add-contact {
+  font-size: 25px;
+  font-family: Oxygen;
+  padding-bottom: 50px;
+}
+.no-records {
+  font-size: 25px;
+  font-family: Oxygen;
+  padding-bottom: 50px;
+}

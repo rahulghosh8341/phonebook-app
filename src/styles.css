@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons';
+@import "~bootstrap/dist/css/bootstrap.css"; 
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+body{
+  background-color: #F1F1F1;
+  padding-left: 20%;
+  padding-right: 20%;
+}

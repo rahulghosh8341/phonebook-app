@@ -1,0 +1,115 @@
+<div
+  class="modal bg"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{ display: 'block' }"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ function }} Contact</h4>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-group">
+            <input
+              type="text"
+              id="firstname"
+              class="form-control"
+              [ngModel]="dummyuser.firstName"
+              placeholder="First Name"
+              formControlName="firstName"
+              [ngClass]="{
+                error:
+                  userForm.get('firstName')!.invalid &&
+                  (userForm.get('firstName')!.touched ||
+                    userForm.get('firstName')!.dirty)
+              }"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                userForm.get('firstName')!.invalid &&
+                (userForm.get('firstName')!.touched ||
+                  userForm.get('firstName')!.dirty)
+              "
+            >
+              <small *ngIf="userForm.get('firstName')!.errors?.required">
+                Name is required 😅</small
+              >
+              <small *ngIf="userForm.get('firstName')!.errors?.pattern">
+                Sorry, Only alphabets are accepted 😔
+              </small>
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              [ngModel]="dummyuser.lastName"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="tel"
+              class="form-control"
+              formControlName="phoneNumber"
+              placeholder="Phone Number"
+              [ngModel]="function === 'Add' ? '' : dummyuser.phoneNumber"
+              [ngClass]="{
+                error:
+                  userForm.get('phoneNumber')!.invalid &&
+                  (userForm.get('phoneNumber')!.touched ||
+                    userForm.get('phoneNumber')!.dirty)
+              }"
+            />
+
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                userForm.get('phoneNumber')!.invalid &&
+                (userForm.get('phoneNumber')!.touched ||
+                  userForm.get('phoneNumber')!.dirty)
+              "
+            >
+              <small *ngIf="userForm.get('phoneNumber')!.errors?.required">
+                Phone number is required
+              </small>
+              <small *ngIf="userForm.get('phoneNumber')!.errors?.minlength">
+                Invalid Phone Number - 10 digits expected 🙄
+              </small>
+              <small *ngIf="userForm.get('phoneNumber')!.errors?.maxlength">
+                Invalid Phone Number - 10 digits expected 🙄</small
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="modal-footer">
+              <button
+                class="btn btn-primary"
+                [disabled]="!userForm.valid"
+                type="submit"
+              >
+                <i class="bi bi-plus-lg" style="font-size: 13px"></i>
+                {{ function }} Contact
+              </button>
+              <a
+                routerLink="/"
+                class="btn btn-danger"
+                style="
+                  float: right;
+                  font-size: 15px;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Cancel
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

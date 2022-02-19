@@ -1,5 +1,6 @@
 # Phonebook
 
+A Phonebook(Contacts) app to save, arrange, maintain user contacts.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
 ## Development server
